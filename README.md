@@ -1,5 +1,8 @@
 # phrase-to-regexp
 
+A Vuejs library to create regexp.
+
+Still in alpha. 
 ## Project setup
 ```
 npm install

@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-layout row>
-      <v-flex xs8>
+      <v-flex xs7>
         <v-text-field label="regular expression" v-model="regexp" readonly/>
         <v-card>
           <v-card-title>The text search will follow this rule</v-card-title>
@@ -20,7 +20,8 @@
           </v-card-text>
         </v-card>
       </v-flex>
-
+      <v-flex xs1>
+      </v-flex>
       <v-flex xs4>
         <v-card id="scroll-target" style="max-height: 350px" class="scroll-y">
           <v-card-text v-scroll:scroll-target>
@@ -86,13 +87,14 @@ import { prototype } from 'events';
 import PhrasalExpressionField from './PhrasalExpressionField.vue';
 import draggable from 'vuedraggable';
 
-@Component<Regexp>({
+@Component<PhraseToRegexp>({
+  name: 'phrase-to-regexp',
   components: { PhrasalExpressionField, draggable },
   data(): any {
     return {};
   }
 })
-export default class Regexp extends Vue {
+export default class PhraseToRegexp extends Vue {
   private regexp: string = '';
   private selection: any = [];
   private PhrasalExpressionElements: PhrasalExpressionElement[] = new Array<
